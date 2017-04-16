@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    android:scrollbars="none"
+    tools:context="com.almuflihun.yukkajian.Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Nama"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan nama anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Tempat Lahir"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/tempatLahir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan nama anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Tanggal Lahir"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/tanggalLahir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:padding="@dimen/small_padding"
+            android:text="Masukkan tanggal lahir anda"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Username"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan username anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Email"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan email anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Password"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan password anda"
+            android:inputType="textPassword"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Confirm Password"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/confirmPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Ketik ulang password anda"
+            android:inputType="textPassword"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Alamat Asal"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/alamat_asal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan alamat asal anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Alamat Domisili"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/alamat_domisili"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan alamat domisili anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Jenis Kelamin"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <RadioGroup
+            android:id="@+id/jk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:padding="@dimen/small_padding">
+
+            <RadioButton
+                android:id="@+id/pria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pria" />
+
+            <RadioButton
+                android:id="@+id/wanita"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wanita" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Pekerjaan"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/pekerjaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan pekerjaan anda"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:text="Nomor Handphone"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/nomerHp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/big_padding"
+            android:background="@drawable/shape_white"
+            android:hint="Masukkan nomor HP anda"
+            android:inputType="number"
+            android:padding="@dimen/small_padding"
+            android:textSize="@dimen/text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_orange"
+            android:onClick="submit"
+            android:text="@string/register"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>

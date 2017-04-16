@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_jadwal_kajian"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context="com.almuflihun.yukkajian.JadwalKajian">
+
+    <LinearLayout
+        android:id="@+id/containerTanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:text="Tanggal" />
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:background="@drawable/shape_white"
+            android:gravity="center"
+            android:paddingBottom="@dimen/small_padding"
+            android:paddingTop="@dimen/small_padding"
+            android:text="Tanggal Kajian"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_kajian"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/containerTanggal"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"></ListView>
+
+</RelativeLayout>

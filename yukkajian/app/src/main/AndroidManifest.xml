@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.almuflihun.yukkajian">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".JadwalKajian"
+            android:label="@string/menu_jadwal_kajian"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".JadwalSholat"
+            android:label="@string/menu_jadwal_sholat"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KelolaKajian"
+            android:label="@string/menu_kelola_kajian"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LiveStream"
+            android:label="@string/menu_live_streaming"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CreateKajian"
+            android:label="@string/inputan_kajian"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Register"
+            android:label="@string/register"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".Login" />
+    </application>
+
+</manifest>

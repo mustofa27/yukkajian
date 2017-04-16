@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.almuflihun.yukkajian.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/menu_utama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/small_padding"
+        android:paddingRight="@dimen/small_padding">
+
+        <LinearLayout
+            android:id="@+id/menu_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/icon_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/small_padding"
+                android:text="@string/icon_menu_home"
+                android:textColor="@color/menu_color"
+                android:textSize="@dimen/text_size_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/menu_home"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginBottom="@dimen/small_padding"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/icon_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/small_padding"
+                android:text="@string/icon_menu_setting"
+                android:textColor="@color/menu_color"
+                android:textSize="@dimen/text_size_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/menu_setting"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginBottom="@dimen/small_padding"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_help"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/icon_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/small_padding"
+                android:text="@string/icon_menu_help"
+                android:textColor="@color/menu_color"
+                android:textSize="@dimen/text_size_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/menu_help"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginBottom="@dimen/small_padding"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/icon_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/small_padding"
+                android:text="@string/icon_menu_account"
+                android:textColor="@color/menu_color"
+                android:textSize="@dimen/text_size_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/menu_account"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginBottom="@dimen/small_padding"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_utama"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/menu_utama"></FrameLayout>
+</RelativeLayout>
