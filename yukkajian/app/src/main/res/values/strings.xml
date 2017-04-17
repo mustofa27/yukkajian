@@ -10,6 +10,10 @@
     <string name="menu_kelola_kajian">Kelola Kajian</string>
     <string name="menu_live_streaming">Streaming Kajian</string>
     <string name="inputan_kajian">Membuat Kajian</string>
+    <string name="icon_calendar">&#xf073;</string>
+    <string name="icon_clock">&#xf017;</string>
+    <string name="icon_user">&#xf007;</string>
+    <string name="icon_marker">&#xf041;</string>
     <string name="icon_menu_home">&#xf015;</string>
     <string name="icon_menu_setting">&#xf085;</string>
     <string name="icon_menu_help">&#xf29c;</string>
@@ -32,4 +36,5 @@
     <string name="signin">Sign In</string>
     <string name="register_clue">Belum punya akun?</string>disini
     <string name="to_register">Daftar disini</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

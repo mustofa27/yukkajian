@@ -68,7 +68,9 @@ public class PertanyaanModel {
         }
         Cursor cursor = databaseHandler.get(User.tabel,where,"");
         if(cursor.moveToFirst()) {
-            pertanyaanList.add(new Pertanyaan(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getInt(3), cursor.getString(4)));
+            do{
+                pertanyaanList.add(new Pertanyaan(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getInt(3), cursor.getString(4)));
+            }while (cursor.moveToNext());
         }
         return pertanyaanList;
     }

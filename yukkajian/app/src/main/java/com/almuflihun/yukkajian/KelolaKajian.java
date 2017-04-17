@@ -6,23 +6,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
+import adapter.MyKajianAdapter;
 import helper.FontManager;
+import model.KajianModel;
+import network.KajianNetwork;
 
 public class KelolaKajian extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
+    KajianModel kajianModel;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelola_kajian);
-        FontManager.markAsIconContainer(findViewById(R.id.container_icon),FontManager.getTypeface(this,FontManager.font_awesome));
+        kajianModel = new KajianModel(this);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(KelolaKajian.this,CreateKajian.class),1);
+                startActivity(new Intent(KelolaKajian.this,CreateKajian.class));
+                finish();
             }
         });
+        listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(new MyKajianAdapter(this,kajianModel.GetAllKajian()));
     }
     @Override
     public void onBackPressed() {

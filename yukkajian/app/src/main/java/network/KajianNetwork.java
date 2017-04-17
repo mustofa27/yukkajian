@@ -14,9 +14,9 @@ public class KajianNetwork extends BaseNetwork{
         super(context);
     }
     public void CreateKajian(JSONObject jsonObject, JsonCallback jsonCallback){
-        connectionHandler.MakeConnection(ConnectionHandler.post_method,"",jsonObject,jsonCallback,"Processing","Please Wait");
+        connectionHandler.MakeConnection(ConnectionHandler.post_method,"kajian/create",jsonObject,jsonCallback,"Processing","Please Wait");
     }
     public void GetKajian(JSONObject jsonObject, JsonCallback jsonCallback){
-        connectionHandler.MakeConnection(ConnectionHandler.get_method,"",jsonObject,jsonCallback);
+        connectionHandler.MakeConnection(ConnectionHandler.post_method,"kajian/get",jsonObject,jsonCallback);
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_jadwal_kajian"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back"
-    tools:context="com.almuflihun.yukkajian.JadwalKajian">
+    tools:context="com.almuflihun.yukkajian.JadwalKajian"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/containerTanggal"
@@ -35,13 +36,16 @@
             android:text="Tanggal Kajian"
             android:textSize="@dimen/text_size" />
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
     <ListView
         android:id="@+id/list_kajian"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/containerTanggal"
         android:divider="@android:color/transparent"
         android:scrollbars="none"></ListView>
 
-</RelativeLayout>
+</LinearLayout>

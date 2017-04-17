@@ -1,19 +1,21 @@
 package entity;
 
+import java.io.Serializable;
+
 /**
  * Created by LENOVO on 4/14/2017.
  */
 
-public class Kajian {
+public class Kajian implements Serializable{
     public static String tabel = "kajian",column_id = "id"
             , column_sid = "sid", column_1 = "tanggal", column_2 = "jam", column_3 = "tema",
             column_4 = "pemateri", column_5 = "alamat", column_6 = "lat", column_7 = "longi",
-            column_8 = "deskripsi", column_9 = "jenis_peserta", column_10 = "is_rutin";
+            column_8 = "deskripsi", column_9 = "jenis_peserta", column_10 = "is_rutin", column_11 = "thumbnail";
     int id,sid,isRutin;
-    String tanggal,jam,tema,pemateri,alamat,lat,longi,deskripsi,jenis_peserta;
+    String tanggal,jam,tema,pemateri,alamat,lat,longi,deskripsi,jenis_peserta,thumbnail;
 
     public Kajian(int id, int sid, int isRutin, String tanggal, String jam, String tema, String pemateri,
-                  String alamat, String lat, String longi, String deskripsi, String jenis_peserta) {
+                  String alamat, String lat, String longi, String deskripsi, String jenis_peserta, String thumbnail) {
         this.id = id;
         this.sid = sid;
         this.isRutin = isRutin;
@@ -26,6 +28,7 @@ public class Kajian {
         this.longi = longi;
         this.deskripsi = deskripsi;
         this.jenis_peserta = jenis_peserta;
+        this.thumbnail = thumbnail;
     }
 
     public int getId() {
@@ -122,5 +125,13 @@ public class Kajian {
 
     public void setJenis_peserta(String jenis_peserta) {
         this.jenis_peserta = jenis_peserta;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

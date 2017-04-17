@@ -45,6 +45,7 @@ public class KajianModel {
             contentValues.put(Kajian.column_8,kajian.getDeskripsi());
             contentValues.put(Kajian.column_9,kajian.getJenis_peserta());
             contentValues.put(Kajian.column_10,kajian.getIsRutin());
+            contentValues.put(Kajian.column_11,kajian.getThumbnail());
             boolean result = databaseHandler.insert(Kajian.tabel, contentValues);
             contentValues.clear();
             return result;
@@ -66,6 +67,7 @@ public class KajianModel {
         contentValues.put(Kajian.column_8,kajian.getDeskripsi());
         contentValues.put(Kajian.column_9,kajian.getJenis_peserta());
         contentValues.put(Kajian.column_10,kajian.getIsRutin());
+        contentValues.put(Kajian.column_11,kajian.getThumbnail());
         boolean result = databaseHandler.update(Kajian.tabel,contentValues,Kajian.column_id+'='+kajian.getId());
         contentValues.clear();
         return result;
@@ -82,7 +84,7 @@ public class KajianModel {
         if(cursor.moveToFirst()) {
             return new Kajian(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4)
                     , cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getString(8)
-                    , cursor.getString(9), cursor.getString(10), cursor.getString(11));
+                    , cursor.getString(9), cursor.getString(10), cursor.getString(11), cursor.getString(12));
         }
         return null;
     }
@@ -90,9 +92,11 @@ public class KajianModel {
         Cursor cursor = databaseHandler.all(Kajian.tabel,"");
         List<Kajian> kajianList = new ArrayList<>();
         if(cursor.moveToFirst()) {
-            kajianList.add(new Kajian(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4)
-                    , cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getString(8)
-                    , cursor.getString(9), cursor.getString(10), cursor.getString(11)));
+            do {
+                kajianList.add(new Kajian(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4)
+                        , cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getString(8)
+                        , cursor.getString(9), cursor.getString(10), cursor.getString(11), cursor.getString(12)));
+            }while (cursor.moveToNext());
         }
         return kajianList;
     }

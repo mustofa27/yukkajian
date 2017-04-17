@@ -14,9 +14,9 @@ public class PertanyaanNetwork extends BaseNetwork{
         super(context);
     }
     public void CreatePertanyaan(JSONObject jsonObject, JsonCallback jsonCallback){
-        connectionHandler.MakeConnection(ConnectionHandler.post_method,"",jsonObject,jsonCallback,"Processing","Please Wait");
+        connectionHandler.MakeConnection(ConnectionHandler.post_method,"pertanyaan/post",jsonObject,jsonCallback,"Processing","Please Wait");
     }
-    public void GetPertanyaan(JSONObject jsonObject, JsonCallback jsonCallback){
-        connectionHandler.MakeConnection(ConnectionHandler.get_method,"",jsonObject,jsonCallback);
+    public void GetPertanyaan(int id, JsonCallback jsonCallback){
+        connectionHandler.MakeConnection(ConnectionHandler.get_method,"pertanyaan/get/"+id,null,jsonCallback,"Processing","Please Wait");
     }
 }

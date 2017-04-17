@@ -31,7 +31,8 @@
         <activity
             android:name=".CreateKajian"
             android:label="@string/inputan_kajian"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Login"
             android:theme="@style/AppThemeNoActionBar" />
@@ -44,10 +45,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register"
+        <activity
+            android:name=".Register"
             android:label="@string/register"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".Login" />
+            android:parentActivityName=".Login"
+            android:windowSoftInputMode="adjustResize" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:parentActivityName=".CreateKajian" />
+        <activity
+            android:name=".DetailKajian"
+            android:label="Detail Kajian"
+            android:parentActivityName=".JadwalKajian" />
+        <activity
+            android:name=".PostPertanyaan"
+            android:label="Kirim Pertanyaan"
+            android:parentActivityName=".JadwalKajian"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetailKelolaKajian"
+            android:label="Detail Kajian"
+            android:parentActivityName=".KelolaKajian" />
+        <activity android:name=".PertanyaanKajian"
+            android:label="List Pertanyaan"
+            android:parentActivityName=".KelolaKajian" ></activity>
     </application>
 
 </manifest>

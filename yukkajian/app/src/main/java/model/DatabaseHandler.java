@@ -31,7 +31,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             Kajian.column_6 + " TEXT, " +
             Kajian.column_7 + " TEXT, " +
             Kajian.column_8 + " TEXT, " +
-            Kajian.column_9 + " TEXT)"
+            Kajian.column_9 + " TEXT, " +
+            Kajian.column_11 + " TEXT)"
             ;
     private static final String CREATE_TABLE_jadwal = "CREATE TABLE " + Jadwal.tabel+ " ( " +
             Jadwal.column_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

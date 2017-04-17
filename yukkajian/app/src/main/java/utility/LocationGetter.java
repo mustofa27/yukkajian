@@ -12,6 +12,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -107,24 +108,19 @@ public class LocationGetter {
         final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (isGPSEnabled) {
-            final ProgressDialog progressDialog = new ProgressDialog(context);
-            progressDialog.setTitle("Processing");
-            progressDialog.setMessage("Getting Location, please wait!");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
             LocationListener locationListener = new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
                     float akurasi = location.getAccuracy();
-                    progressDialog.dismiss();
-                    if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                            ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        Toast.makeText(context,"Location getter not permitted", Toast.LENGTH_LONG);
-                        return;
+                    if (akurasi < 10) {
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                                ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(context, "Location getter not permitted", Toast.LENGTH_LONG);
+                            return;
+                        }
+                        locationManager.removeUpdates(this);
+                        callback.Done(location);
                     }
-                    callback.Done(location);
-                    locationManager.removeUpdates(this);
-                    Toast.makeText(context,"Akurasi : " + akurasi, Toast.LENGTH_LONG);
                 }
 
                 @Override
@@ -142,7 +138,67 @@ public class LocationGetter {
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_COARSE);
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                progressDialog.dismiss();
+                Toast.makeText(context,"Location getter not permitted", Toast.LENGTH_LONG);
+                return;
+            }
+            locationManager.requestLocationUpdates(locationManager.getBestProvider(criteria,true),1000*1,0,locationListener, null);
+        }
+        else
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage("Your GPS is disabled. Enable your GPS and WIFI and try again!")
+                    .setCancelable(false)
+                    .setTitle("Gps Status")
+                    .setPositiveButton("OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+    }
+    public static void requestSingleUpdateDialog(final Context context, final GetLocationCallback callback) {
+        final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (isGPSEnabled) {
+            final ProgressDialog progressDialog = new ProgressDialog(context);
+            progressDialog.setCancelable(false);
+            progressDialog.setTitle("Getting your location");
+            progressDialog.setMessage("Please wait");
+            progressDialog.show();
+            LocationListener locationListener = new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    float akurasi = location.getAccuracy();
+                    if (akurasi < 10) {
+                        progressDialog.dismiss();
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                                ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(context,"Location getter not permitted",Toast.LENGTH_LONG);
+                            return;
+                        }
+                        locationManager.removeUpdates(this);
+                        callback.Done(location);
+                    }
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+                }
+            };
+            Criteria criteria = new Criteria();
+            criteria.setAccuracy(Criteria.ACCURACY_COARSE);
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(context,"Location getter not permitted", Toast.LENGTH_LONG);
                 return;
             }

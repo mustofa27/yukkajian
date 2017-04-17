@@ -24,8 +24,8 @@ import org.json.JSONObject;
 public class ConnectionHandler {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000*90;
-    public static final String BASE_URL =  "http://yukkajian.adeilhamfajri.id/api/",IMAGE_URL =  "http://103.252.101.105/uploads/users/", response_message_success = "success", response_message_error = "error"
-            ,response_data = "data",response_message = "message", response_status = "status", response_pagination = "pagination", BaseURLImage = "http://103.252.101.105/";;
+    public static final String BASE_URL =  "http://yukkajian.adeilhamfajri.id/api/",IMAGE_URL =  "http://yukkajian.adeilhamfajri.id/thumbnailkajian/", response_message_success = "success", response_message_error = "error"
+            ,response_data = "data",response_message = "message", response_status = "status", response_pagination = "pagination";
     public static int post_method = Request.Method.POST, get_method = Request.Method.GET;
     Context context;
     public ConnectionHandler(Context context){
@@ -75,7 +75,6 @@ public class ConnectionHandler {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(method, BASE_URL + route, prop, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                progressDialog.dismiss();
                 try {
                     String data = response.getString(response_data), pagination = "";
                     if(response.has(response_pagination))
